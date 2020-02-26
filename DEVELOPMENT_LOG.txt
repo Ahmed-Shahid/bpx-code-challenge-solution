@@ -1,0 +1,85 @@
+DEVELOPMENT NOTEBOOK
+- Ahmed Shahid
+
+This is a reference document to log design decisions and other important 
+milestones
+
+2020-02-24	09:00 PM	Opened git repository, looked over material, and chose 
+							Problem 1
+							
+						Initial thoughts: take a logic based approach (basically
+							create a string after parsing the input number 
+							through a bunch of if statements.  Start with small
+							integers; should be able to repeat logic every three
+							digits.  Then move onto decimals, and look into 
+							deploying code as restful-API (locally)
+							
+2020-02-24	10:30 PM	End
+
+
+
+2020-02-25	06:00 PM	Cloned repository and started work
+
+						A quick and dirty solution would be to make a hashmap/
+							dictionary of every number from 0 to 999, and then 
+							repeat every 3 digits. Logic would look something
+							like this:
+							
+								1) Split on decimal point
+								2) Handle everything to the left first
+								3) Split up input number into groups of 3 digits
+								4) Every group of 3 would be evaluated the same
+									way (lookup in the hasmap)
+								5) Append the resulting strings with "million",
+									"thousand", or nothing as appropriate and
+									concatenate
+									
+						It would take a while to make that hashmap.
+						
+						Started coding a "hybrid" solution with groups of 
+							hashmaps combined with logic
+							
+2020-02-25	07:40 PM	End
+
+
+
+2020-02-25	09:00 PM	Continued coding
+
+						This is basically the same as my initial approach, not
+							much of a hybrid solution.  Maybe I should make 
+							slightly longer hashmaps to handle special cases,
+							like teens
+							
+						I should have started with unit tests. I think I will
+							write some now with the unittest library.  I heard
+							pytest is also good.
+							
+						Maybe I should look into a framework that scaffolds your
+							python project for you. Pyscaffold?
+							
+						Pyscaffold has an option to build a Django project. This
+							will be useful if I end up making a rest API, and if
+							I decide to make a front-end.  I could make the rest
+							API with tornado.  Pyscaffold seems to have way more
+							than I need, though.
+							
+						I'll get the code working and make a basic unit test
+							structure, then I'll think about proper scaffolding
+							and rest API/web frameworks
+							
+						Wrote unit tests for spellOneDigit
+						
+						Fixed sooooo many stupid mistakes and got unit tests to
+							pass.  Moving on to spellTwoDigits unit tests.
+							
+						Wrote spellTwoDigits unit tests and got them working.
+							That went way better than the first round.  Moving 
+							on to spellThreeDigits unit tests and coding.
+							
+						Finished spellThreeDigits unit tests and coding.  
+							Tomorrow, will move on to spellNumber, will use 
+							recursion, handle up to billions?
+							
+						Pushing code
+							
+2020-02-26	12:41 AM	End
