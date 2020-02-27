@@ -83,3 +83,41 @@ milestones
 						Pushing code
 							
 2020-02-26	12:41 AM	End
+
+
+
+2020-02-26	07:24 PM	Continuing Coding
+
+						Final format of input should be string because I will
+							ultimately have to split on the decimal.  I am about
+							to start on the spellInteger functionality.  Should
+							I take integer as an input?  I don't think so 
+							because split isn't happening here.
+							
+						However, I will have to divide number up into sets of 3
+							digits.  It might be good to take string as input.
+							
+2020-02-26 07:40 PM		End
+
+
+
+2020-02-26 09:20 PM		Resumed coding
+
+						spellInteger needs an upper bound.  Choosing 
+							999,999,999,999.
+							
+						If I split groups of three into list, should places be
+							represented by indices and tracked in a separate 
+							dictionary?  Or should I just use the dictionary?
+							
+						First iteration didn't work, but I forgot to use
+							recursion
+							
+						After several attempts, got the recursion working, and
+							all unit tests for spellInteger are working.  Added
+							a few helper functions (getCleanIntString, 
+							getNextPlace).
+							
+						Pushing code
+						
+2020-02-27	12:04 AM	End
