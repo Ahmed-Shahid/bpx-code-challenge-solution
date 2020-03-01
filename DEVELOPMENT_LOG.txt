@@ -181,3 +181,10 @@ milestones
                         Well, I made the front-end webpage with a little
                             Googling and some limited prior knowledge of html.
                             It would be nice to focus on styling now...
+
+                        Made minor adjustments to display text and added
+                            back button.
+
+                        Pushing code.
+
+2020-03-01 12:53 AM     End
