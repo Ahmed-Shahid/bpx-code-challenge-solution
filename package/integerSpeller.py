@@ -2,6 +2,10 @@
 
 class integerSpeller:
 
+    '''
+    This class is meant to spell out positive integers
+    '''
+
     MAX_VALUE = 999999999999
     
     SINGLE_DIGIT_MAP = {
