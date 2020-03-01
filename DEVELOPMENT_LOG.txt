@@ -136,14 +136,14 @@ milestones
 
 2020-02-29	04:30 PM	Continuing Coding
 
-						Creating "numberSpeller" interface for REST service
+						Creating "NumberSpeller" interface for REST service
 							because I know I will end up using a class with
-							that name.  For now it returns integerSpeller, but
+							that name.  For now it returns IntegerSpeller, but
 							I will build out functionality to include decimals,
 							etc.
 							
-						Starting numberSpeller REST service.  Using tornado, and
-							copyting off template of code I wrote previously.
+						Starting NumberSpeller REST service.  Using tornado, and
+							copying off template of code I wrote previously.
 							
 						Tornado implementation failed.  After some Googling, it
 							turns out Tornado updated some api in the ioloop or
@@ -161,3 +161,23 @@ milestones
 						Pushing code.
 						
 2020-02-29 06:42 PM		End
+
+
+
+2020-02-29 09:30 PM     Continuing coding
+
+                        Built out spell_decimal helper method to be used in
+                            spell_number method.  Still need to write unit
+                            tests.
+
+                        Decided to switch from Notepad++ to Pycharm finally,
+                            and this led to a deep rabbit hole of refactoring.
+                            At least my unit tests look good now.
+
+                        Added a lot more unit tests and consolidated.
+                            Accidentally tested REST API in web browser, which
+                            got me thinking: should I make a front-end web page?
+
+                        Well, I made the front-end webpage with a little
+                            Googling and some limited prior knowledge of html.
+                            It would be nice to focus on styling now...
