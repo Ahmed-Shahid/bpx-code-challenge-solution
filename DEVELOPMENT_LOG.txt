@@ -205,7 +205,7 @@ milestones
 
 
 
-2020-03-01 09:00 PM     Docker Toolbox installed.  Watched a few vidoes on
+2020-03-01 09:00 PM     Docker Toolbox installed.  Watched a few videos on
                             Docker tutorials.
 
                         I will build my docker image off of the python 3
