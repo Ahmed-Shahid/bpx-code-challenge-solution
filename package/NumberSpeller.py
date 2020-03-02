@@ -50,7 +50,7 @@ class NumberSpeller:
             return 'negative ' + self.spell_number(n_str[1:])
 
         else:
-            raise ValueError("Unrecognized input: " + n_str + "is not a number")
+            raise ValueError("Unrecognized input: " + n_str + " is not a number")
 
     def spell_decimal(self, n_str):  # FIXME: can this be a static method?
         """

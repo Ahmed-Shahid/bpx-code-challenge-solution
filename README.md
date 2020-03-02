@@ -1,100 +1,95 @@
+NumberSpeller
+===================
+This repository contains a solution to Exercise 1 - Numbers to Words (see [Original_Problem_Statement.md](Original_Problem_Statement.md))
 
+### System Requirements
+For full requirements, see [requirements.txt](requirements.txt).  The main requirements are:
+- Python 3.8
+- Flask framework
+- Docker (if you are interested in running the docker build)
+- Windows/Linux/MacOS
+
+**NOTE:** This GitHub Repository has Linux line endings (\n)
+
+### Functionality
+This code converts numeric input into its spelled out form (i.e. 2354 --> two thousand three hundred fifty-four)
+
+This code handles the following:
+- Integers (maximum 12 digits)
+- Mixed numbers (1-12 digits to left of decimal, 1-11 digits to right of decimal)
+- Negative numbers
+- Type errors, value errors
+
+This code has the following features:
+- Command line usage
+- REST API service
+- User interface through web browser
+- Docker build (Incomplete)
+
+### Usage: Command Line Only
+1. From command line, navigate to source code
+2. Run all unit tests by typing in the following command:
+    ```commandline
+    $ python -m unittest discover package/unit_tests
+    ```
+3. Run individual unit tests by executing the following commands:
+    ```commandline
+    $ python -m package.unit_tests.Test_IntegerSpeller
+    $ python -m package.unit_tests.Test_NumberSpeller
+    ```
+4. Use the Number Spell code directly from the python console with the following commands:
+    ```commandline
+    $ python
+    >>> from package.NumberSpeller import NumberSpeller
+    >>> instance = NumberSpeller()
+    >>> instance.spellNumber(<NUMBER_FORMATTED_AS_STRING>)
+    ```
+   For Example:
+   ```commandline
+    >>> instance.spellNumber("-534.02")
+    negative five hundred thirty-four and two hundredths
+    ```
+   
+### Usage: REST API and Web Page
+1. From command line, navigate to source code
+2. Run the following command to start the REST API Service:
+    ```commandline
+    $ python numberSpellService.py
+    ```
+3. Open an internet browser (i.e. Google Chrome)
+4. Navigate to localhost at the following URL:
+    http://127.0.0.1:5000/
+    or
+    http://localhost:5000/
+5. Type any text into the text box and click "Submit"
+6. The next page will show SUCCESS if the text entered is properly handled, otherwise the page will show FAILURE
+7. Click "Back" to go back to the form page (or the previous page in your history)
+
+
+### Usage: Docker Build (Incomplete)
+1. From command line, navigate to source code
+2. Run the following command to initiate the docker build:
+    ```commandline
+    $ docker build -t numspell:latest .
+    $ docker run -p 5000:5000 numspell:latest
+    ```
+3. The intent here is to be able to follow steps 4-7 from **Usage: REST API and Web Page** once the container is running.
+
+### Other Files/Packages In This Directory
+- **package** - directory containing the main source code and unit tests
+- **DEVELOPMENT_LOG.txt** - a log tracking ideas, work, and design decisions throughout the week
+- **Dockerfile** - file that enables docker build, even though I don't know how to test the service!!!
+- **numberSpellService.py** - code that exposes *package* as a REST API service
+- **Original_Problem_Statement.md** - original document received from BPx
+- **requirements.txt** - list of Python libraries and versions used; may be passed as an argument into pip install (as shown in Dockerfile)
  
-**The Code Challenge** - Your coding assignment should you choose to accept it is to pick one of the following coding exercises. Please choose the exercise that you believe best reflects your skill set and experience. You may implement the exercise in any language of your choice. Unless otherwise noted, the minimum requirement is that we can run your application in a CLI. Optionally you can implement the user interface in a web page. 
+### Future Enhancements
+- Better logging in debug mode versus regular mode
+- Just have one web page that dynamically updates text as user types
+- Set up automated build pipeline
 
-At the end of this page be sure to read the Documentation and Deliverables sections regardless of which exercise you choose.
-
-Exercise 1 – Numbers to Words
-===================
-Write some code that will accept an integer and convert it to the appropriate word representation.
-
-Example:
-
-Convert 2523 to "Two thousand five hundred twenty-three "
-
-**Optional**
-- Allow the user the option to enter decimals and provide the proper translation. Example: 23.5 to “twenty three point five” or “twenty three and five tenths”
-- Allow the user the option to enter a dollar amount and provide the proper translation. Example $85052.50 to “eighty five thousand fifty two dollars and fifty cents”
-- Allow the user the option to enter a calculation. Example 530 + 250 to “seven hundred eighty”
-- An endpoint that accepts the numeric value and returns the word representation
-- Appropriate Unit Tests
-- A Dockerfile that allows us to run your application in a container
-- A UI that can be run locally or link to a website that allows us to enter numeric values outside of the console
-
-
-Exercise 2 - Best Poker Hand
-===================
-
-Write some code that will evaluate a 5 card poker hand between 2 players and determine the winner
-
-Example:
-
-Hand: Kh Kc 3s 3h 2d (2 Pair)
-
-Hand: Kh Qh 6h 2h 9h (Flush) *winner*
-
-**Optional**
-- Allow the user to choose how many players to deal to
-- Give the user an option to choose how many cards are dealt to each player (and determines the best poker hand out of 5 cards)
-- An endpoint that handles dealing cards to each player
-- An endpoint that accepts an array of cards for each player and determines the winner 
-- Appropriate Unit Tests
-- A Dockerfile that allows us to run your application in a container
-- A UI that can be run locally or link to a website that allows us to play the game outside of the console
-
-
-Exercise 3 - Anagrams API
-===================
-
-Build an API that allows fast searches for anagrams using the supplied dictionary.txt file. The API you design should respond on the following endpoints as specified:
-Takes a JSON array of English-language words and adds them to the dictionary (data store).
-Returns a JSON array of English-language words that are anagrams of the word passed in the URL. 
-Deletes a single word (but not it’s associated anagrams) from the data store.
-
-Example:
-
-API response to possible anagrams for “integral”
-
-{ "results": ["alerting", "altering", "relating", "triangle"] }
-
-**Optional**
-- An optional query parameter that indicates the maximum number of results to return in the array of anagrams
-- Endpoint that returns a count of words in the dictionary and min/max/median/average word length
-- Respect a query param for whether or not to include proper nouns in the list of anagrams
-- Endpoint that identifies words with the most anagrams
-- Endpoint that takes a set of words and returns whether or not they are all anagrams of each other
-- Endpoint to return all anagram groups of size >= x
-- Endpoint to delete a word and all of its anagrams
-- Appropriate Unit Tests
-- A Dockerfile that allows us to run your application in a container
-
-
-
-Exercise 4 - Front End Challenge - Tic-tac-toe
-===================
-
-Create a website that has a tic tac toe board that two people could use to play against each other. Being a front end project, emphasis will be on usability, design, and aesthetics. You don't have to use the base of 3x3 board with x's and o's but the game needs to be tic-tac-toe of some form.
-
-**Optional**
-- Score/games won tracker
-- Hosted online (https://www.heroku.com/free has some free options)
-- Computer AI that plays against you
-- User controls. For instance options to refresh, alter who goes first, or any other feature you can think of
-- Full stack aspects such as a database to save score
-
-
-Documentation for all projects
-===================
-Provide documentation that is useful to consumers and/or maintainers of your application.
-
-Suggestions for documentation topics include:
-- Implementation details (which data store you used, why you chose a particular technology or language, etc.)
-- How to test calls to your API (curl, postman, etc)
-- Features you think would be useful to add to your application
-- Limitations to your application or any edge cases you found while working on the project
-- Design overview and trade-offs you considered
-
-
-Deliverables
-===================
-Please provide the code for the assignment either in a code repository (GitHub or Bitbucket) or as a zip file. If you have a deliverable that is deployed on the web please provide a link, otherwise give us instructions for running it locally.
+### More Info
+See [DEVELOPMENT_LOG.txt](DEVELOPMENT_LOG.txt) for more information on design decisions, etc.
+    
+### Authors
+- Ahmed Shahid 

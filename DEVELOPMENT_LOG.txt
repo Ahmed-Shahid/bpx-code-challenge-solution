@@ -188,3 +188,41 @@ milestones
                         Pushing code.
 
 2020-03-01 12:53 AM     End
+
+
+
+2020-03-01 07:19 PM     Finally started looking into Docker
+
+                        Watched some YouTube videos and consulted other resources.
+                            Docker is a lot easier and more useful than I
+                            originally thought.  I should have set this up
+                            first so I could get an automated build pipeline
+                            going.  Installing Docker now.
+
+                        Windows version issues.  Going through Docker Toolbox.
+
+2020-03-01 07:36 PM     End
+
+
+
+2020-03-01 09:00 PM     Docker Toolbox installed.  Watched a few vidoes on
+                            Docker tutorials.
+
+                        I will build my docker image off of the python 3
+                            base image to ensure compatibility.  I will need
+                            a requirements.txt file for this.  Making now.
+
+                        Got sidetracked with html styling.  Going back to
+                            dockerfile.
+
+                        Docker image is building and running successfully,
+                            but I can't interact with REST API from localhost
+                            when API is running from inside a container.
+                            I think it has something to do with my host, ports,
+                            and environment variables.
+
+                        Starting on README documentation.
+
+                        Pushing Code.
+
+2020-03-02 01:00 AM     End
