@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "numberSpellService.py" ]
+CMD [ "python", "main_numbers_to_words_service.py" ]
